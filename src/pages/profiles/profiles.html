@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-navbar  color="primary">
+    <ion-title>
+      Profiles
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+<ion-grid>
+  <ion-col *ngIf="data.profiles.length">  
+    <ion-item  *ngFor="let profile of data.profiles">
+     <ion-card>
+  		<ion-card-header>{{profile.name}}</ion-card-header>
+ 		<ion-card-content>
+ 			<ion-grid>
+  				<ion-row>
+  					<ion-col  *ngFor="let dice of profile.dices">
+  	  					<!-- <dice [value]="dice" [result]="dice" size="25"></dice>-->
+  	  					<div style="min-width:45px;max-width:45px;min-height:45px;max-height:45px;border:2px solid;border-radius:5px;text-align:center"><div style="height:9px"></div>W<b>{{dice.value}}</b></div>
+  	  				</ion-col>
+  	  			</ion-row>
+  	  		</ion-grid>
+   		 <button ion-button color="danger" (click)="removeProfile(profile)"><ion-icon name="trash"></ion-icon></button>
+   		 <button ion-button color="secondary" (click)="openProfile(profile)">Use</button>
+		</ion-card-content>
+	</ion-card>
+	</ion-item>
+    </ion-col>
+  </ion-grid>
+  
+  <error-page *ngIf="!data.profiles.length" title="No profiles available" text="You can just create one with the button at the top right edge"></error-page>
+  <ion-fab top right edge>
+    <button ion-fab mini color="secondary" (click)="openCreator()"><ion-icon name="add"></ion-icon></button>
+  </ion-fab>
+</ion-content>

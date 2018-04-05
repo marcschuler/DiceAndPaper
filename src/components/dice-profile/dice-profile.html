@@ -1,0 +1,8 @@
+ <h2>{{profile.name}}</h2><a>{{profile.date}}<br>{{profile.author}}</a>
+<ion-grid>
+  <ion-row>
+    <ion-col  *ngFor="let dice of profile.dices">
+      <dice [value]="dice.value" [result]="dice.result" size="{{size}}"></dice>
+    </ion-col>
+  </ion-row>
+</ion-grid>

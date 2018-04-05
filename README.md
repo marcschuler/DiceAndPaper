@@ -1,26 +1,24 @@
-This is a starter template for [Ionic](http://ionicframework.com/docs/) projects.
+# DiceAndPaper
+An example ionic dice rolling application I created last summer (2017).
+Uses my REST service for online features.
 
-## How to use this template
+## Features
 
-*This template does not work on its own*. The shared files for each starter are found in the [ionic2-app-base repo](https://github.com/ionic-team/ionic2-app-base).
+### Roll dices
+Choose between an combination of dices from 2 up to 100 dice eyes and roll them randomly
+![Example Image](https://lh3.googleusercontent.com/JR0sX8D_fQNX6ckEkQ9HvL4AFTEvBTpswoVzb25htjVmzRtroiBHDU6HXqiP6cBLhQ=w1440-h620)
+### Play online in groups
+Create or join an existing game with an invite code to roll the dices together. You can see the results in realtime, but also can access an history
+![Example Image](https://lh3.googleusercontent.com/bCuNmLxZh66T9QGQ2h5ObgnVatNAR9JmT2qg0W50CTpB1nMuYNwRPqWlhPi7-rbITA=w1440-h620)
 
-To use this template, either create a new ionic project using the ionic node.js utility, or copy the files from this repository into the [Starter App Base](https://github.com/ionic-team/ionic2-app-base).
+### Create profiles
+Want to roll a set of dices? Create custom profiles with any combination you want!
+![Example Image](https://lh3.googleusercontent.com/EGaZT01p1ta1TSgY74eeMI4BrM01TRr4KPCTK1Z0IddToJz6UXwDMZBbkYi0T8-fWEw=w1440-h620)
+## Get it
+### Android
+This app also supports "shake to roll"
+[Play Store](https://play.google.com/store/apps/details?id=com.karlthebee.diceandpaper "Download")
 
-### With the Ionic CLI:
-
-Take the name after `ionic2-starter-`, and that is the name of the template to be used when using the `ionic start` command below:
-
-```bash
-$ sudo npm install -g ionic cordova
-$ ionic start myTabs tabs
-```
-
-Then, to run it, cd into `myTabs` and run:
-
-```bash
-$ ionic cordova platform add ios
-$ ionic cordova run ios
-```
-
-Substitute ios for android if not on a Mac.
-
+## Browser
+Play it on your PC, Laptop or mobile - everywhere.
+[Web](http://data.karlthebee.de/apps/diceandpaper/)

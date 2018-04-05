@@ -1,0 +1,77 @@
+<!--
+  Generated template for the OnlinePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>Online</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+<div *ngIf="online.currentSession">
+<h2>Currently : {{online.currentSession.name}}</h2>
+<ion-card>
+<ion-card-content>
+<p>Role : <a *ngIf="online.currentSession.iamadmin">Admin</a><a *ngIf="!online.currentSession.iamadmin">User</a></p>
+<p>Game code : {{online.currentSession.gcode}}</p>
+<button ion-button (click)="openHistory()"><ion-icon name="cloud"></ion-icon> History</button>
+<button ion-button color="danger" (click)="online.leave()">Leave</button>
+</ion-card-content>
+</ion-card>
+</div>
+
+<h2>Manage</h2>
+<ion-card>
+	<ion-card-header>Create a new game</ion-card-header>
+ 	 <ion-card-content>
+ 	 	<p>Create your own session and invite friends to join you. See what they roll and share your dices</p>
+  	 	<ion-item>
+ 	 		<ion-label color="secondary" floating>Enter the game name</ion-label>
+ 	 	 	<ion-input [(ngModel)]="name"></ion-input>
+ 	 	 </ion-item>
+  	 	<button block ion-button color="secondary" (click)="createSession()">Create</button>
+	 </ion-card-content>
+</ion-card>
+
+<ion-card>
+	<ion-card-header>Join an game</ion-card-header>
+ 	 <ion-card-content>
+ 	 	<p>Use an gamecode to join an session</p>
+ 	 	<ion-item>
+ 	 		<ion-label color="secondary" floating>Enter your gamecode</ion-label>
+ 	 	 	<ion-input [(ngModel)]="gamecode"></ion-input>
+ 	 	 </ion-item>
+  	 	<button block ion-button color="secondary" (click)="joinSession()">Join</button>
+	 </ion-card-content>
+</ion-card>
+
+
+<h2>Last sessions</h2>
+<!-- <ion-refresher (ionRefresh)="refresh($event)">
+<ion-refresher-content> -->
+<div *ngIf="online.sessions">
+	<ion-card *ngFor="let session of online.sessions">
+		<ion-card-header>{{session.name}}</ion-card-header>
+ 	 	<ion-card-content>
+ 	 		<p>Created by {{session.author}} at {{session.created}}</p>
+ 	 		<p>Game code : {{session.gcode}}</p>
+  	 		<button block ion-button color="secondary" (click)="join(session.id)">Rejoin</button>
+	 	</ion-card-content>
+	</ion-card>
+</div>
+
+<error-page *ngIf="!online.sessions" title="No connection to online service" text="Please check your network connection and try it again in a few minutes"></error-page>
+<error-page *ngIf="online.sessions && !online.sessions.length" title="No recent sessions" text="You can create one or join an existing session above"></error-page>
+<!-- </ion-refresher-content>
+</ion-refresher> -->
+
+
+</ion-content>
+

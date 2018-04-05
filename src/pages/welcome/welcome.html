@@ -1,0 +1,30 @@
+<ion-content padding>
+
+<ion-slides pager>
+  <ion-slide>
+  	<img src="https://data.karlthebee.de/apps/dices.jpg">
+    <h2>Welcome to Dice & Paper</h2>
+  	<p>You can roll just <b>roll a dice</b> or create an personal profile with the dices you want</p>
+  	<p>Available dices : W6, W8, W10, W20 and for special purposes : W2 and W100</p>
+    <dice-profile profile="{{profileExample}}"></dice-profile>
+  </ion-slide>
+
+  <ion-slide>
+    <img src="https://data.karlthebee.de/apps/dap_online.jpg">
+    <h2>Play online</h2>
+    <p>Create a session and share your game code. Now let everyone enter the code and join the session. When someone rolls a dice, everyone gets a notification</p>
+  </ion-slide>
+
+  <ion-slide>
+    <h2>Choose your nickname</h2>
+    <ion-item>	
+		<ion-label>Name</ion-label>
+		<ion-input type="text" [(ngModel)]="name"></ion-input>
+	</ion-item>
+	<p small>Your name can be changed anytime in the about page</p>
+	<button ion-button color="primary" (click)="start()">Start</button>
+  </ion-slide>
+</ion-slides>
+
+
+</ion-content>
